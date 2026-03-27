@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<!-- =========================================
+   Propiedad de LuzNet ©
+   Creado por Felipe Jiménez
+   Así de fácil, así de impresionante, así es LuzNet
+   ========================================= -->
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -51,8 +56,8 @@
 .hijo {
 font-family: 'Dancing Script';
   border-radius: 10px;
-  border: 1px solid pink;
-      box-shadow: 0 0 1px deeppink, 0 0 1px deeppink, 0 0 45px deeppink;
+  border: 1px solid deeppink;
+      
   width: 90%;
   max-width: 400px;
   height: 600px;             /* altura fija para centrar */
@@ -66,17 +71,14 @@ font-family: 'Dancing Script';
   background-size: 100% 100%;
   background-position: center;
   box-sizing: border-box;
-  opacity: 0; /* oculto hasta que se active */
+  
   transition: opacity 2s ease;
   position: relative;
   overflow: hidden;
   margin: 20px auto;         /* centrado horizontal en móvil */
-  animation: animationcolor 10s infinite;
+  
   text-align: center;        /* asegura que el texto se centre */
-  text-shadow: 
-  0 0 8px black, 
-  0 0 12px black,
-  0 0 10px black;
+  
 }
 
 
@@ -90,6 +92,31 @@ font-family: 'Dancing Script';
   
 }
 
+/*imagen de portada*/*
+
+.logo-container {
+  width: 220px;       /* tamaño del círculo */
+  height: 220px;      /* mismo valor para ancho y alto */
+  border-radius: 50%; /* recorte circular */
+  overflow: hidden;   /* oculta todo lo que sobresalga */
+  margin: 10px auto 0px auto;
+  position: relative;
+}
+.logo-container {
+  width: 220px;       /* cuadrado */
+  height: 220px;
+  border-radius: 50%; /* círculo perfecto */
+  overflow: hidden;   /* recorta la imagen dentro */
+ 
+}
+
+.logo-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* ajusta la imagen dentro */
+  display: block;
+  }
+
 p {
   font-size:20px;
   font-family: Times New Roman;
@@ -101,203 +128,28 @@ h1 {
   
 }
 
-/* Animaciones */
-@keyframes textoDerechaIzquierda {
-  0% { transform: translateX(100%) scale(0.8); opacity: 0; }
-  100% { transform: translateX(0) scale(1); opacity: 1; }
-}
-@keyframes textoIzquierdaDerecha {
-  0% { transform: translateX(-100%) scale(0.8); opacity: 0; }
-  100% { transform: translateX(0) scale(1); opacity: 1; }
-}
-@keyframes zoomGiro {
-  0% { transform: scale(0) rotate(0deg); opacity: 0; }
-  50% { transform: scale(1.2) rotate(180deg); opacity: 1; }
-  100% { transform: scale(1) rotate(360deg); opacity: 1; }
-}
-@keyframes pulse {
-  0%,100% { transform: scale(1); }
-  50% { transform: scale(1.2); }
-}
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-/* Estilo contador */
-#contador  {
-  font-size: 22px;
-  font-family: 'Shadows Into Light', cursive;
-  text-align: center;
-  width: 280px;
-  margin: 0 auto;
-  display: block;
-  animation: pulse 1s infinite; /* zoom constante */
-}
-
-/* Clases activadas por Intersection Observer */
-.hijo.activo { opacity: 1; }
-.hijo1 h1 { opacity: 0; }
-.hijo1 p { opacity: 0; }
-.hijo1.activo h1 { animation: textoDerechaIzquierda 2s forwards; }
-.hijo1.activo p { animation: textoIzquierdaDerecha 2s forwards; }
-
-.hijo2 p { opacity: 0; }
-.hijo2.activo p { animation: zoomGiro 3s forwards; }
-
-.hijo3 h1 { opacity: 0; }
-.hijo3.activo h1 { animation: fadeIn 2s forwards; }
-
-/* Animaciones */
-/*
-@keyframes animationcolor {
-  0%,100% { color:pink; }
-  25% { color:white; }
-  50% { color:pink; }
-  75% { color:white; }
-}*/
-
-/* Reproductor */
-.audio-player {
-/*  border: 1px solid #FFD700;*/
-  border: 1px solid pink;
-  box-shadow: 0 0 1px deeppink, 0 0    1px deeppink, 0 0 45px deeppink;
-  border-radius: 40px;
-  padding: 15px;
-  width: 180px;
-  background-color: transparent;
-/*  box-shadow: 
-    0 0 12px rgba(255, 215, 0, 0.7),
-    0 0 24px rgba(255, 215, 0, 0.5),
-    0 0 36px rgba(255, 215, 0, 0.3);*/
-  text-align: center;
-  animation: textoIzquierdaDerecha 2s;
-}
-
-@keyframes glow {
-  0%, 100% {
-    
-  box-shadow: 0 0 1px deeppink, 0 0    1px deeppink, 0 0 45px deeppink;
-  }
-  50% {
-    box-shadow: 
-    
-      
-  box-shadow: 0 0 1px deeppink, 0 0    1px deeppink, 0 0 45px deeppink;
-  }
-}
-
-.controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  animation: animationcolor 10s infinite;
-}
-
-.controls button {
-  background: transparent;
-  border: 1px solid pink;
-  box-shadow: 0 0 1px deeppink, 0 0    1px deeppink, 0 0 45px deeppink;
-/*  border: 1px solid #FFD700;*/
-  color:deeppink;
-  font-size: 20px;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-/*  box-shadow: 
-    0 0 8px rgba(255, 215, 0, 0.7),
-    0 0 16px rgba(255, 215, 0, 0.5);*/
-  transition: transform 0.2s, color 0.3s;
-}
-
-.controls button:hover {
-  transform: scale(1.2);
-  
-  
-  box-shadow: 0 0 1px deeppink, 0 0    1px deeppink, 0 0 45px deeppink;
-}
-
-.progress {
-  flex: 1;
-  height: 8px;
-  background : deeppink;
-  border-radius: 5px;
-  cursor: pointer;
-  position: relative;
-}
-
-.progress-filled {
-  height: 100%;
-  width: 0%;
-  background:black;
-  border-radius: 5px;
-  
-  box-shadow: 0 0 1px deeppink, 0 0    1px deeppink, 0 0 4px deeppink;
-  transition: width 0.2s;
-}    
-
-/* Animación de zoom infinito */
-@keyframes zoomInfinite {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-    color:pink; /* dorado */
-  }
-  50% {
-    transform: scale(1.3); /* se agranda */
-    opacity: 1;
-    color:white; /* alterna a blanco */
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-    color:pink; /* regresa a dorado */
-  }
-}
-
-/* Clase aplicada al h1 "Dale Play" */
-.daleplay {
-  animation: pulse 1s infinite forwards;
-}
+/*imagen de la ubicacion*/
 img{
     width:70%;
     height:30%;
     
-    border: 1px solid pink;
-      box-shadow: 0 0 1px deeppink, 0 0 1px deeppink, 0 0 20px deeppink;
-    
+    border: 1px solid deeppink;
+      
 /*  transition: transform 0.2s, color 0.3s;*/
   border-radius: 10px;
 }
 
-@keyframes girar {
-  0%   { transform: rotate(0deg) scale(0.8); opacity: 0; }
-  50%  { transform: rotate(180deg) scale(1.1); opacity: 1; }
-  100% { transform: rotate(360deg) scale(1); opacity: 1; }
+/* Estilo del enlace */
+.gps a {
+  text-decoration: none;
+  color: inherit; /* hereda el color del contenedor */
 }
-
-/* Imagen dentro del div 3 */
-.hijo3 img {
-  opacity: 0; /* estado inicial */
-  transform: rotate(0deg);
-}
-
-.hijo3.activo img {
-  animation: girar 5s ease-out forwards; /* duración ajustable */
-}
-
 .gps {
   display: flex;              /* usa flex para centrar el texto */
   justify-content: center;
   align-items: center;
-  border: 1px solid pink;
-      box-shadow: 0 0 1px deeppink, 0 0 1px deeppink, 0 0 45px deeppink;
-  transition: transform 0.2s, color 0.3s;
+  border: 1px solid deeppink;
+      
 
   width: 165px;
   padding: 8px 0;
@@ -313,71 +165,7 @@ img{
   text-align: center;
 
   /* Animaciones combinadas */
-  animation: zoomPulse 2s infinite ease-in-out,
-             colorPulse 4s infinite linear,
-             animationcolor 10s infinite; /* mismo efecto que h y p */
-}
-
-/* Animación de zoom pulsante */
-@keyframes zoomPulse {
-  0%   { transform: scale(1); }
-  50%  { transform: scale(1.1); }
-  100% { transform: scale(1); }
-}
-
-/* Animación de cambio de color */
-@keyframes colorPulse {
-  0%, 100% { color: #decba5; }
-  50%      { color: white; }
-}
-
-/* Estilo del enlace */
-.gps a {
-  text-decoration: none;
-  color: inherit; /* hereda el color del contenedor */
-}
-
-
-/*efecto hijo 3*/
-.hijo3 {
-  opacity: 0; /* estado inicial */
-}
-
-.hijo3.activo {
-  animation: encendidoLento 5s ease forwards; /* duración lenta */
-}
-
-.hijo3.activo h1,
-.hijo3.activo p {
-  animation: encendidoLento 5s ease forwards, animationcolor 10s infinite;
-}
-
-@keyframes matrixFall {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.hijo3 p,
-.hijo3 h1 {
-  opacity: 0;
-  display: inline-block; /* necesario para animar cada letra */
-}
-
-.hijo3.activo p,
-.hijo3.activo h1, 
-.hijo3.activo a
-{
-  animation: matrixFall 5s ease forwards,
-  animationcolor 10s infinite
+  
 }
 
 
@@ -387,12 +175,11 @@ img{
 
 width: 225px;
     height: 190px;
-/*  width: 100%;
-  max-width: 400px;*/
+
   overflow: hidden;
-  border: 1px solid pink;
-      box-shadow: 0 0 1px deeppink, 0 0 1px deeppink, 0 0 45px deeppink;
-/*  transition: transform 0.2s, color 0.3s;*/
+  border: 1px solid deeppink;
+      
+
   border-radius: 10px;
   margin:10px;
 }
@@ -438,37 +225,15 @@ efecto girar cuando se active el hijo4 */
   transform: scale(1.2);
 }
 
+/*separador*/
+hr {
+  border: none;              /* elimina el estilo por defecto */
+  height: 1px;               /* grosor de la línea */
+  background:deeppink;       /* color dorado */
+  margin: 20px auto;         /* espacio arriba y abajo */
+  width: 60%;                /* ancho de la línea */
+}
 
-/*efecto matrix*/
- .matrix-container {
-      font-size: 2rem;
-    }
-
-    @keyframes matrixFall {
-      0% {
-        transform: translateY(-100vh); /* empieza arriba */
-        opacity: 0;
-      }
-      70% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(0); /* se detiene en su lugar */
-        opacity: 1;
-      }
-    }
-
-    .matrix-container span {
-      opacity: 0;
-      display: inline-block;
-      animation: matrixFall 1s ease forwards;
-    }
-
-    .matrix-container .space {
-      display: inline-block;
-      width: 0.6em; /* ancho del espacio */
-    }
-    
     /* Párrafo más grande */
 .hijo5 p.zoom {
   font-size: 20px; /* ajusta según lo grande que lo quieras */
@@ -481,200 +246,36 @@ animation:  animationcolor 10s infinite;
 }
 
 
-    
-  .zoom {
-  transform: scale(0.2);
-  opacity: 0;
-}
-
-@keyframes zoomIn {
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.zoom.visible {
-  animation: zoomIn 1.5s forwards ease-out;
-}
-
-.hijo6 span {
-  display: inline-block; /* sin opacity base para que no se apaguen */
-}
-
-@keyframes christmasLight {
-  0%   { opacity: 0.1; color:white; }
-  50%  { opacity: 1; color:white; text-shadow: 0 0 10px pink; }
-  100% { opacity: 1; color: pink; /*text-shadow: 0 0 15px #FFD700;*/ }
-}
-
-@keyframes colorShift {
-  0%   { color: white; text-shadow: 0 0 15px pink; } /* dorado brillante */
-  50%  { color:white; text-shadow: 0 0 15px #FFFFFF; } /* blanco brillante */
-  100% { color:pink; text-shadow: 0 0 15px pink; } /* dorado brillante */
-}
-
-.hijo6 span.on {
-  animation: christmasLight 1s forwards;
-}
-
-.hijo6 span.colorCycle {
-  animation: colorShift 4s infinite ease-in-out;
-}
-
-#hijo6 h1 {
-  font-size: 35px; /* tamaño del título */
-}
-
-#hijo6 p {
-  font-size: 15px; /* tamaño del párrafo */
-}
-
-#hijo7 h1 {
-  font-size: 35px; /* tamaño del título */
-}
-
-#hijo7 p {
-  font-size: 19px; /* tamaño del párrafo */
-}
-
-hr {
-  border: none;              /* elimina el estilo por defecto */
-  height: 1px;               /* grosor de la línea */
-  background:deeppink;       /* color dorado */
-  margin: 20px auto;         /* espacio arriba y abajo */
-  width: 60%;                /* ancho de la línea */
-}
+ 
 /* ====== Contenedor general del div 7 ====== */
 .hijo7 {
   text-align: center;   /* centra todo el contenido */
   padding: 20px;
 }
 
-/* ====== H1 con efecto Matrix + ciclo de color ====== */
-#matrix-h1 {
-  margin-bottom: 15px;
-}
 
-#matrix-h1 .space {
-  display: inline-block;
-  width: 0.6em;
-}
 
-@keyframes matrixFade {
-  from { opacity: 0; transform: translateY(-20px); color:white; }
-  to   { opacity: 1; transform: translateY(0); color:deeppink; }
-}
 
-#matrix-h1 span {
-  opacity: 0;
-  display: inline-block;
-  animation: matrixFade 0.5s forwards;
-}
+/* ====== Logo  ====== */
 
-#matrix-h1 span.colorCycle {
-  animation: animationcolor 6s infinite ease-in-out;
-}
-
-/* ====== Párrafos con efecto olas ====== */
-.hijo7 p {
-  text-align: center;   /* centra el texto */
-/*  margin: 10px auto;*/
-  width: 100%;
-}
-/*
-.hijo7 p .space {
-  display: inline-block;
-  width: 0.6em;
-}
-*/
-/*
-.hijo7 p span {
-  display: inline;*/ /* importante para que text-align funcione 
-}
-*/
-/*
-.hijo7 p span.on {
-  animation: matrixFade 0.5s forwards;
-}*/
-/*
-.hijo7 p span.colorCycle {
-  animation: animationcolor 6s infinite ease-in-out;
-}*/
-
-/* ====== Animación olas de playa (ciclo dorado ↔ blanco) ====== */
-@keyframes animationcolor {
-  0%,100% { color:deeppink; }
-  25% { color:white; }
-  50% { color:deeppink
-  ; }
-  75% { color:deeppink; }
-}
-
-/* ====== Imagen con zoom ====== */
 .zoom-img {
-  width: 50px;
+  width: 120px;       /* tamaño más adecuado */
   height: auto;
-  transform: scale(0.2);
-  opacity: 0;
-  margin-top: 10px;
+  transform: scale(1); /* ya no lo reduce */
+  opacity: 1;          /* visible desde inicio */
+  margin-top: 20px;    /* separación del texto */
   display: block;
   margin-left: auto;
-  margin-right: auto; /* centra la imagen */
-}
-
-@keyframes zoomInImg {
-  to { transform: scale(1); opacity: 1; }
-}
-
-.zoom-img.visible {
-  animation: zoomInImg 2s forwards ease-out;
+  margin-right: auto;  /* centrado */
 }
 
 
 
-/*
-#matrix-h1 span,
-.hijo7 p span{
-  display: inline-block;
-  animation: animationcolor 6s infinite ease-in-out;
-}*/
-/* H1: efecto olas infinito */
-#matrix-h1 span {
-  display: inline-block;
-  animation: animationcolor 6s infinite ease-in-out;
-}
 
-/* Párrafos: efecto olas que se ejecuta una sola vez */
-.hijo7 p span {
-  display: inline-block;
-  animation: animationcolor 6s ease-in-out forwards; /* sin infinite */
-}
 
-/*imagen de portada*/*
 
-.logo-container {
-  width: 220px;       /* tamaño del círculo */
-  height: 220px;      /* mismo valor para ancho y alto */
-  border-radius: 50%; /* recorte circular */
-  overflow: hidden;   /* oculta todo lo que sobresalga */
-  margin: 10px auto 0px auto;
-  position: relative;
-}
-.logo-container {
-  width: 220px;       /* cuadrado */
-  height: 220px;
-  border-radius: 50%; /* círculo perfecto */
-  overflow: hidden;   /* recorta la imagen dentro */
-  border: 1px solid deeppink;
-  box-shadow: 0 0 15px deeppink;
-}
 
-.logo-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;  /* ajusta la imagen dentro */
-  display: block;
+
   </style>
 
   
@@ -690,61 +291,46 @@ hr {
   " alt="Logo LuzNet">
 </div>
       <h1>Mis XV años <br />Fecha</h1>
+      
+      
+     
+    </div>
+    
+    <div class="hijo hijo1">
+ 
+  <h1>Mis XV años </h1>
       <p>
           
 Gracias mamá y papá por su amor, por su esfuerzo y por enseñarme a ser quien soy. <br /> 
 Con todo mi corazón <br /> 
 Nombre quinceañera
       </p>
+  
+</div>
+      
       
      
-    </div>
+    
     
     
      <div class="hijo hijo1">
       <h1>Mis XV años <br />
       Mis Papas y Padrinos</h1>
       <p>Nombres de papas <br /> Nombres de padrinos</p>
-      <!--div class="daleplay">
-      <h1 >Dale Play</h1>
       </div>
-      <div class="audio-player">
-    <audio id="song">
-      <source src="https://dl.dropbox.com/scl/fi/49eacpxgv0tmsts97l530/Bogota-MP3_160K.mp3?rlkey=gk0ibk5ld4qde03maaiuz8soy&st=v99fbfsg&dl=0
-      " type="audio/mp3">
-      Tu navegador no soporta audio HTML5.
-    </audio>
-
-    <div class="controls">
-      <button id="playPause">▶</button>
-      <div class="progress" id="progress">
-        <div class="progress-filled" id="progressFilled"></div>
-      </div>
-      <button id="mute">🔇</button>
-    </div>
-  </div-->
+      
       
      
-    </div>
+    
     
 
     <div class="hijo hijo2">
+    <h1>Informacion del evento</h1>
       <p>En este apartado va información <br>
         sobre lugar, fecha y hora del evento </p>
       <!--div id="contador"></div-->
     </div>
 
-<!--div class="hijo hijo6" id="hijo6">
-  <h1 data-text="Agenda de actividades"></h1>
-  <p data-text="En este apartado van los horarios
-De las distintas actividades del evento"></p>
-  <ul>
-    <li data-text=" 🕒 7:00 PM – Recepción"></li>
-    <li data-text="🍽️ 8:00 PM – Cena"></li>
-    <li data-text="🎶 9:30 PM – Baile"></li>
-    <li data-text="🥂 11:00 PM – Brindis"></li>
-  </ul>
-</div-->
 
     <div class="hijo hijo3 subir">
       <h1>Ceremonia Religiosa</h1>
@@ -785,7 +371,7 @@ De las distintas actividades del evento"></p>
   </script>
   
     <div class="matrix-container">
-     <p id="matrix-text" data-text="Sección de fotos">Sección de fotos</p>
+     <h1>Sección de fotos</h1>
   </div>
     
     <div class="slider">
@@ -815,27 +401,19 @@ De las distintas actividades del evento"></p>
 </div>
       
       </div>
-      <!--div class="hijo hijo5">
-  <h1 class="zoom">Qr pase de entrada</h1>
-  <img class="zoom" src="https://i.ibb.co/93pkFTj3/pase-1.png" alt="pase-1">
-  <p class="zoom">Por favor confirma tu asistencia <br /> antes de la fecha.</p>
-  <div class="gps zoom">
-    <a href="https://wa.me/523312281872?text=Hola,%20confirmo%20mi%20asistencia%20al%20evento." class="btn">Confirmar</a>
-  </div>
-</div-->
+     
       
        <div class="hijo hijo7" id="hijo7">
-  <h1 id="matrix-h1" data-text="Gracias por asistir"></h1>
+  <h1>Gracias por asistir</h1>
 
-<p id="matrix-p1" data-text="Agradezco tu presencia ."></p>
-    <p id="matrix-p3" data-text="En este evento tan solemne."></p>
-<hr><br /><br /><br /><br /><br />
-<p id="matrix-p2" data-text="✨Invitaciones LuzNet✨"></p>
+<p>Agradezco tu presencia.</p>
 
-<p id="matrix-p4" data-text="✨Agradece tu preferencia✨"></p>
+    <p>En este evento tan solemne.</p>
+<hr>
+<p>✨Invitaciones LuzNet✨</br>✨Agradece✨ <br />✨Tu preferencia✨</p>
   
   <div class="footer-img">
-  <!--p>Invitaciones LuzNet agradece tu preferencia.</p-->
+  
   <img class="zoom-img" src="https://i.ibb.co/p6rnGD6R/IMG-20260227-WA0009.jpg
   " alt="Logo LuzNet">
   </div>
@@ -845,115 +423,7 @@ De las distintas actividades del evento"></p>
   </div>
 
   <script>
- 
-// Intersection Observer para activar animaciones al entrar en pantalla
-const hijos = document.querySelectorAll('.hijo');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      // Reiniciar animación CSS: quitar y volver a poner la clase
-      entry.target.classList.remove('activo');
-      void entry.target.offsetWidth; // fuerza reflow
-      entry.target.classList.add('activo');
-
-      // Para hijo4: activar efecto Matrix cada vez que aparece
-      if (entry.target.classList.contains('hijo4')) {
-        prepararMatrixTexto();
-      }
-    }
-  });
-}, { threshold: 0.5 });
-
-hijos.forEach(hijo => observer.observe(hijo));
-
-
-
-   
-    
-    
-    //barra
-    
-    const slides = document.querySelector('.slides');
-const dots = document.querySelectorAll('.dot');
-let index = 0;
-let startX = 0;
-let currentTranslate = 0;
-let prevTranslate = 0;
-const total = dots.length;
-
-function updateIndicator() {
-  dots.forEach((dot, i) => {
-    dot.classList.toggle('active', i === index);
-  });
-}
-
-slides.addEventListener('touchstart', e => {
-  startX = e.touches[0].clientX;
-});
-
-slides.addEventListener('touchend', e => {
-  const endX = e.changedTouches[0].clientX;
-  const diff = endX - startX;
-
-  if (diff < -50 && index < total - 1) index++;
-  if (diff > 50 && index > 0) index--;
-
-  currentTranslate = -index * slides.clientWidth;
-  slides.style.transform = `translateX(${currentTranslate}px)`;
-  prevTranslate = currentTranslate;
-
-  updateIndicator();
-});
-
-// Inicializar
-updateIndicator();
-
-//frase matrix
-
-
-
-
-// Función para preparar el efecto Matrix
-
-
-// Observer para hijo4
-const hijo4 = document.querySelector('.hijo4');
-const observer4 = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      prepararMatrixTextoDiv4('matrix-text'); // activa efecto Matrix en el título
-      iniciarSliderDiv4(); // activa slider
-    }
-  });
-}, { threshold: 0.5 });
-
-if (hijo4) observer4.observe(hijo4);
-
-
-// Función Matrix exclusiva para div4
-function prepararMatrixTextoDiv4(elementId) {
-  const el = document.getElementById(elementId);
-  if (!el) return;
-
-  const texto = el.getAttribute('data-text');
-  el.textContent = '';
-
-  [...texto].forEach((letra, i) => {
-    const span = document.createElement('span');
-    if (letra === ' ') {
-      span.className = 'space';
-      span.innerHTML = '&nbsp;';
-    } else {
-      span.textContent = letra;
-      span.style.animationDelay = (i * 0.2) + 's';
-      span.style.animationName = 'matrixFall'; // 👈 usa tu animación Matrix
-    }
-    el.appendChild(span);
-  });
-}
-
-
-// Slider exclusivo para div4
+ // Slider exclusivo para div4
 function iniciarSliderDiv4() {
   const slides = hijo4.querySelector('.slides');
   const dots = hijo4.querySelectorAll('.dot');
@@ -990,146 +460,39 @@ function iniciarSliderDiv4() {
   // Inicializar
   updateIndicator();
 }
+   
+    
+    const slides = document.querySelector('.slides');
+const dots = document.querySelectorAll('.dot');
+let index = 0;
+let startX = 0;
+let currentTranslate = 0;
+let prevTranslate = 0;
+const total = dots.length;
 
-// Observer para hijo5
-const hijo5 = document.querySelector('.hijo5');
-
-const observer5 = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      // Activar zoom en todos los elementos con clase .zoom dentro de hijo5
-      const zoomElements = hijo5.querySelectorAll('.zoom');
-      zoomElements.forEach(el => {
-        el.classList.remove('visible');
-        void el.offsetWidth; // reflow
-        el.classList.add('visible');
-      });
-    }
+function updateIndicator() {
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
   });
-}, { threshold: 0.5 });
-
-if (hijo5) {
-  observer5.observe(hijo5);
-}
-// Observer para activar el efecto cuando aparece en pantalla
-const hijo6 = document.getElementById('hijo6');
-const observer6 = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      prepararLucesNavidad('hijo6');
-    }
-  });
-}, { threshold: 0.5 });
-
-if (hijo6) {
-  observer6.observe(hijo6);
 }
 
-function prepararLucesNavidad(divId) {
-  const cont = document.getElementById(divId);
-  if (!cont) return;
+slides.addEventListener('touchstart', e => {
+  startX = e.touches[0].clientX;
+});
 
-  // convertir cada texto en spans
-  const elementos = cont.querySelectorAll('[data-text]');
-  elementos.forEach(el => {
-    const texto = el.getAttribute('data-text');
-    el.textContent = ''; // limpiar contenido original
+slides.addEventListener('touchend', e => {
+  const endX = e.changedTouches[0].clientX;
+  const diff = endX - startX;
 
-    [...texto].forEach(letra => {
-      if (letra === ' ') {
-        const span = document.createElement('span');
-        span.innerHTML = '&nbsp;';
-        el.appendChild(span);
-      } else if (letra === '\n') {
-        el.appendChild(document.createElement('br'));
-      } else {
-        const span = document.createElement('span');
-        span.textContent = letra;
-        el.appendChild(span);
-      }
-    });
-  });
+  if (diff < -50 && index < total - 1) index++;
+  if (diff > 50 && index > 0) index--;
 
-  // seleccionar todos los spans creados
-  const spans = Array.from(cont.querySelectorAll('span'));
-  let pendientes = spans.map((_, i) => i);
+  currentTranslate = -index * slides.clientWidth;
+  slides.style.transform = `translateX(${currentTranslate}px)`;
+  prevTranslate = currentTranslate;
 
-  // encendido aleatorio
-  const interval = setInterval(() => {
-    if (pendientes.length === 0) {
-      clearInterval(interval);
-      // todas encendidas → activar ciclo sincronizado
-      spans.forEach(span => span.classList.add('colorCycle'));
-      return;
-    }
-    const randIndex = Math.floor(Math.random() * pendientes.length);
-    const idx = pendientes[randIndex];
-    spans[idx].classList.add('on');
-    pendientes.splice(randIndex, 1);
-  }, 50); // velocidad de encendido
-}
-
-// Observer para hijo7
-const hijo7 = document.getElementById('hijo7');
-const observer7 = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      // Procesar h1 y párrafos con data-text
-      prepararMatrixTexto('matrix-h1');
-      prepararMatrixTexto('matrix-p1');
-      prepararMatrixTexto('matrix-p2');
-      prepararMatrixTexto('matrix-p3');
-      prepararMatrixTexto('matrix-p4');
-
-      // activar zoom en la imagen
-      const zoomElements = hijo7.querySelectorAll('.zoom-img');
-      zoomElements.forEach(el => {
-        el.classList.remove('visible');
-        void el.offsetWidth; // reflow
-        el.classList.add('visible');
-      });
-    }
-  });
-}, { threshold: 0.5 });
-
-if (hijo7) observer7.observe(hijo7);
-
-
-// Función general para h1 y p con data-text
-function prepararMatrixTexto(elementId) {
-  const el = document.getElementById(elementId);
-  if (!el) return;
-
-  const texto = el.getAttribute('data-text');
-  el.textContent = '';
-
-  [...texto].forEach((letra, i) => {
-    const span = document.createElement('span');
-    if (letra === ' ') {
-      span.className = 'space';
-      span.innerHTML = '&nbsp;';
-    } else {
-      span.textContent = letra;
-      span.style.animationDelay = (i * 0.2) + 's';
-      span.style.animationName = 'matrixFade';
-    }
-    el.appendChild(span);
-  });
-
-  // activar ciclo olas después de Matrix
-  const spans = el.querySelectorAll('span');
-  const tiempoTotal = texto.length * 200;
-
-  // Inicia el efecto olas
-  setTimeout(() => {
-    spans.forEach(span => span.classList.add('colorCycle'));
-  }, tiempoTotal);
-
-  // Termina el efecto olas después de cierto tiempo (ej. 10s)
-  setTimeout(() => {
-    spans.forEach(span => span.classList.remove('colorCycle'));
-  }, tiempoTotal + 10000); // 10 segundos de olas
-}
+  updateIndicator();
+});
 
   </script>
 </body>
